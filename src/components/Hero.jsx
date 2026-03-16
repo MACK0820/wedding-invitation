@@ -69,7 +69,7 @@ export default function Hero() {
           at their wedding celebration
         </p>
         <div className={styles.date} data-reveal>
-          <p className={styles.dateLine}>Saturday, the Fourteenth of June</p>
+          <p className={styles.dateLine}>Sunday, the Fourteenth of June</p>
           <p className={styles.dateYear}>Two Thousand and Twenty-Six</p>
         </div>
         <p className={styles.venue} data-reveal>Shangri-La Mactan, Cebu, Philippines</p>
