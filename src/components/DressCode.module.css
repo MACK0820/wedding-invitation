@@ -1,0 +1,129 @@
+.section {
+  padding: var(--section-gap) clamp(1.5rem, 8vw, 6rem);
+  background-color: var(--ivory);
+  background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&auto=format&fit=crop&q=75');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(252, 248, 242, 0.92);
+  pointer-events: none;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.visible { opacity: 1 !important; transform: none !important; }
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  position: relative;
+  border: 2.5px solid var(--gold);
+  padding: 3rem;
+  background: rgba(248, 243, 236, 0.96);
+  box-shadow: 0 0 0 8px rgba(184,146,58,0.15);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bark);
+  line-height: 1.1;
+}
+
+.code {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 500;
+  color: var(--bark);
+  margin: 1.2rem 0 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+.desc {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--cream-text);
+  line-height: 1.9;
+  margin-bottom: 1rem;
+}
+
+.note {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--muted);
+  font-style: italic;
+  border-left: 3px solid var(--gold);
+  padding-left: 0.8rem;
+  line-height: 1.7;
+}
+
+.paletteLabel {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.4rem;
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.swatchColor {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(61,43,26,0.3);
+  box-shadow: 0 0 0 4px rgba(184,146,58,0.18);
+}
+
+.swatchName {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: var(--cream-text);
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+@media (max-width: 680px) {
+  .inner { grid-template-columns: 1fr; gap: 3rem; padding: 2rem; }
+}

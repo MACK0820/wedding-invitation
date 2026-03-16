@@ -1,0 +1,164 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1800&auto=format&fit=crop&q=85');
+  background-size: cover;
+  background-position: center 30%;
+  background-attachment: fixed;
+  padding: clamp(6rem, 10vw, 9rem) clamp(1.5rem, 5vw, 4rem);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 45, 60, 0.55) 0%,
+    rgba(10, 30, 45, 0.35) 50%,
+    rgba(20, 45, 60, 0.60) 100%
+  );
+  pointer-events: none;
+}
+
+.corner {
+  position: absolute;
+  width: clamp(120px, 14vw, 180px);
+  height: clamp(120px, 14vw, 180px);
+  pointer-events: none;
+  z-index: 1;
+}
+.cornerTL { top: 0; left: 0; }
+.cornerTR { top: 0; right: 0; transform: scaleX(-1); }
+.cornerBL { bottom: 0; left: 0; transform: scaleY(-1); }
+.cornerBR { bottom: 0; right: 0; transform: scale(-1); }
+
+.inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 680px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+  border: 2.5px solid rgba(184,146,58,0.9);
+  padding: clamp(2.5rem, 6vw, 5rem) clamp(2rem, 6vw, 5rem);
+  background: rgba(248, 243, 236, 0.87);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 12px rgba(184,146,58,0.18), 0 8px 40px rgba(0,0,0,0.18);
+}
+
+.inner::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(184,146,58,0.55);
+  pointer-events: none;
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+[data-reveal]:nth-child(2) { transition-delay: 0.1s; }
+[data-reveal]:nth-child(3) { transition-delay: 0.2s; }
+[data-reveal]:nth-child(4) { transition-delay: 0.3s; }
+[data-reveal]:nth-child(5) { transition-delay: 0.4s; }
+[data-reveal]:nth-child(6) { transition-delay: 0.5s; }
+[data-reveal]:nth-child(7) { transition-delay: 0.6s; }
+[data-reveal]:nth-child(8) { transition-delay: 0.7s; }
+.visible { opacity: 1 !important; transform: none !important; }
+
+.together {
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.names {
+  font-family: var(--font-display);
+  font-size: clamp(3.8rem, 10vw, 6.5rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--bark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1em;
+}
+.name { display: block; font-style: italic; }
+
+.ampersand {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3.5vw, 2rem);
+  font-weight: 300;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  display: block;
+  line-height: 1.6;
+}
+
+.dividerWrap { width: 100%; }
+
+.request {
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 1.8vw, 0.88rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--cream-text);
+  line-height: 2;
+}
+
+.date { margin-top: 0.4rem; }
+
+.dateLine {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2.8vw, 1.35rem);
+  font-weight: 500;
+  color: var(--bark);
+  letter-spacing: 0.04em;
+}
+
+.dateYear {
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  font-weight: 300;
+  color: var(--bark-light);
+  font-style: italic;
+  margin-top: 0.2rem;
+}
+
+.venue {
+  font-family: var(--font-body);
+  font-size: clamp(0.72rem, 1.6vw, 0.82rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 400;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.75rem 2.5rem;
+  border: 2px solid var(--gold);
+  color: var(--gold-deep);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background 0.3s, color 0.3s;
+}
+.cta:hover { background: var(--gold); color: var(--ivory); }

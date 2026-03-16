@@ -1,0 +1,92 @@
+.section {
+  padding: var(--section-gap) clamp(1.5rem, 8vw, 6rem);
+  background-color: var(--ivory);
+  background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1600&auto=format&fit=crop&q=75');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  text-align: center;
+}
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(252, 248, 242, 0.93);
+  pointer-events: none;
+}
+.headingWrap, .list { position: relative; }
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.visible { opacity: 1 !important; transform: none !important; }
+
+.headingWrap { margin-bottom: 3rem; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--bark);
+}
+
+.list {
+  list-style: none;
+  max-width: 540px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border: 2.5px solid var(--gold);
+  padding: 0.5rem 1.5rem;
+  background: rgba(248, 243, 236, 0.96);
+  box-shadow: 0 0 0 7px rgba(184,146,58,0.15);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 90px 24px 1fr;
+  align-items: center;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(184,146,58,0.3);
+}
+.item:last-child { border-bottom: none; }
+
+.time {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--gold-deep);
+  text-align: right;
+  letter-spacing: 0.02em;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin: 0 auto;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--bark);
+  text-align: left;
+  letter-spacing: 0.03em;
+}

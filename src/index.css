@@ -1,0 +1,45 @@
+:root {
+  --ivory:       #F8F3EC;
+  --ivory-dark:  #EEE5D6;
+  --blush:       #D4A882;
+  --blush-light: #EDD5BC;
+  --blush-deep:  #B8784A;
+  --gold:        #B8923A;
+  --gold-light:  #D4B06A;
+  --gold-deep:   #8A6820;
+  --bark:        #3D2B1A;
+  --bark-light:  #7A5535;
+  --cream-text:  #5E3D22;
+  --muted:       #9A7A60;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Jost', sans-serif;
+  --section-gap: clamp(5rem, 10vw, 9rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--ivory);
+  color: var(--bark);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a   { color: inherit; text-decoration: none; }
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+  max-width: 260px;
+}
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: var(--gold-light);
+}
+.divider svg { flex-shrink: 0; }
